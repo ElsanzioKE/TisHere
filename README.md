@@ -1,4 +1,4 @@
-# TisHere Mobile Application
+# TisHere Web Application
 ## Overview
 TisHere is a platform designed to connect professionals from various industries and backgrounds. Whether you're looking to network, collaborate on projects, or seek mentorship, TisHere provides a centralized platform to discover and connect with like-minded professionals.
 # Features
