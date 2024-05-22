@@ -1,0 +1,24 @@
+/* src/components/Navbar.css */
+.navbar {
+    padding: 15px 20px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  .navbar span {
+    margin: 0 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2c3e50; /* Dark color for modern look */
+    transition: color 0.3s;
+  }
+  
+  .navbar span:hover {
+    color: #3498db; /* Hover color */
+  }
+  

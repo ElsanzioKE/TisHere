@@ -1,0 +1,41 @@
+/* src/components/SuggestedPeople.css */
+.suggested-people {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  }
+  
+  .suggested-people ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .suggested-people ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .suggested-people ul li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .suggested-people ul li div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .suggested-people ul li div strong {
+    font-size: 16px;
+  }
+  
+  .suggested-people ul li div p {
+    color: #7f8c8d; /* Muted color for username */
+  }
+  

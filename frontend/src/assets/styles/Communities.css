@@ -1,0 +1,31 @@
+/* src/components/Communities.css */
+.communities {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  }
+  
+  .communities ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .communities ul li {
+    margin: 10px 0;
+  }
+  
+  .communities ul li div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .communities ul li div strong {
+    font-size: 16px;
+  }
+  
+  .communities ul li div p {
+    color: #7f8c8d; /* Muted color for member count */
+  }
+  

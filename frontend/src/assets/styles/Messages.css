@@ -1,0 +1,15 @@
+/* Example Profile.css */
+.messages {
+    padding: 20px;
+    margin-left: 250px;
+  }
+  
+  @media (max-width: 768px) {
+    .mesages {
+      margin-left: 0;
+      padding: 10px;
+    }
+  }
+  
+  /* Repeat similar structure for Notifications.css, Messages.css, SavedPosts.css, Search.css */
+  

@@ -1,0 +1,39 @@
+/* src/components/Post.css */
+.post {
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    transition: box-shadow 0.3s; /* Smooth transition */
+  }
+  
+  .post:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Elevated shadow on hover */
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .post-header .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-image {
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #7f8c8d; /* Muted color for footer text */
+  }
+  

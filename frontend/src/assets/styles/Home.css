@@ -1,0 +1,24 @@
+/* src/assets/styles/Home.css */
+.home {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    margin-left: 250px; /* Ensure this matches the width of your sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .posts {
+    flex: 2;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-right {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
