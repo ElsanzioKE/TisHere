@@ -1,7 +1,7 @@
 from flask import Flask
 from .config import Config
 from .extensions import db, migrate
-from .models import User, Post
+from .models import *
 
 def create_app():
     app = Flask(__name__)
