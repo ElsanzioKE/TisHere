@@ -2,7 +2,7 @@ from flask import Flask
 from .config import Config
 from .extensions import db, migrate
 from .models import *
-
+from .routes.user import user_bp
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
@@ -12,7 +12,7 @@ def create_app():
 
     # Register blueprints
     # app.register_blueprint(auth_bp)
-    # app.register_blueprint(user_bp)
+    app.register_blueprint(user_bp)
     # app.register_blueprint(post_bp)
 
     return app

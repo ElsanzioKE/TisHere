@@ -18,7 +18,7 @@ def get_user(user_id):
     """gets user by id"""
     return User.querry.get(user_id)
 
-def get_all_users():
+def get_users():
     """gets all users"""
     return User.querry.all()
 
