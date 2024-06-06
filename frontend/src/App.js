@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 import Notifications from './pages/Notifications';
 import Messages from './pages/Messages';
 import SavedPosts from './pages/SavedPosts';
+import Register from './pages/Register';
 import Search from './pages/Search';
 import Home from './pages/Home';
 import './assets/styles/App.css';
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/messages" element={<Messages />} />
             <Route path="/saved-posts" element={<SavedPosts />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </div>
       </div>

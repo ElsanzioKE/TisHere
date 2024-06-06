@@ -37,6 +37,11 @@ const Sidebar = () => {
             Search
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/register" activeClassName="active-link">
+            Register
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

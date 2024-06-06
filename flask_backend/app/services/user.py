@@ -16,11 +16,11 @@ def create_user(name, email, password, **kwargs):
 
 def get_user(user_id):
     """gets user by id"""
-    return User.querry.get(user_id)
+    return User.query.get(user_id)
 
-def get_users():
+def get_all_users():
     """gets all users"""
-    return User.querry.all()
+    return User.query.all()
 
 def update_user(user_id, **kwargs):
     """updates user"""
