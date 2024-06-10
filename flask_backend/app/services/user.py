@@ -3,37 +3,40 @@ from app.extensions import db
 from werkzeug.security import generate_password_hash, check_password_hash
 
 def create_user(name, email, password, **kwargs):
-    """ creates a new user"""
+    """Creates a new user"""
+    if User.query.filter_by(email=email).first():
+        raise ValueError("Email already exists")
     hashed_password = generate_password_hash(password)
-    new_user = User(name=name,
-        email=email,
-        password=hashed_password,
-        **kwargs
-    )
+    new_user = User(name=name, email=email, password=hashed_password, **kwargs)
     db.session.add(new_user)
     db.session.commit()
     return new_user
 
 def get_user(user_id):
-    """gets user by id"""
-    return User.query.get(user_id)
+    """Gets user by ID"""
+    user = User.query.get(user_id)
+    print(f"Queried user: {user}")
+    return user
 
 def get_all_users():
-    """gets all users"""
+    """Gets all users"""
     return User.query.all()
 
 def update_user(user_id, **kwargs):
-    """updates user"""
+    """Updates user"""
     user = get_user(user_id)
     if user:
         for key, value in kwargs.items():
             setattr(user, key, value)
-            db.session.commit()
+        db.session.commit()
         return user
+    return None
 
 def delete_user(user_id):
-    user  = get_user(user_id)
+    """Deletes user"""
+    user = get_user(user_id)
     if user:
         db.session.delete(user)
         db.session.commit()
-    return user
+        return user
+    return None

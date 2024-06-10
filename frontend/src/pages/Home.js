@@ -1,56 +1,69 @@
-import React  from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import Posts from "../components/Posts"
+import Posts from "../components/Posts";
 import SuggestedPeople from "../components/SuggestedPeople";
 import Communities from "../components/Communities";
+import CreatePost from "../components/CreatePost";
 import '../assets/styles/Home.css';
+
 function Home() {
-    const samplePosts = [
-        {
-          user: { name: 'Helena', avatar: 'path/to/avatar.jpg' },
-          group: 'Group name',
-          time: '3 min ago',
-          image: 'path/to/image.jpg',
-          description: 'Post description',
-          likes: 21,
-          comments: 4,
-        },
-        {
-            user: { name: 'Lesuuda', avatar: '/images/lesuuda.jpg' },
-            group: 'Sambwenya',
-            time: '0 min ago',
-            image: '/images/kenya_power.jpeg',
-            description: 'An accident just occured involving a Kenya Power Vehicle',
-            likes: 21,
-            comments: 4,
-          },
-          {
-            user: { name: 'Helena', avatar: 'path/to/avatar.jpg' },
-            group: 'Group name',
-            time: '3 min ago',
-            image: 'path/to/image.jpg',
-            description: 'Post description',
-            likes: 21,
-            comments: 4,
-          },
-        // Add more sample posts here
-      ];
-      const suggestedPeople = [
-        { id: 1, name: 'Helena Hills', username: 'helenahills', avatar: 'path/to/avatar.jpg' },
-        // Add more people
-      ];
-    
-      const communities = [
-        { id: 1, name: 'Design Enthusiasts', members: '13.2k' },
-        // Add more communities
-      ];
-    
+    const [posts, setPosts] = useState([]);
+    const [suggestedPeople, setSuggestedPeople] = useState([]);
+    const [communities, setCommunities] = useState([]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                console.error('No token found');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/posts', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setPosts(data);
+                } else {
+                    console.error('Error fetching posts:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        };
+
+        const fetchSuggestedPeople = async () => {
+            // Fetch suggested people logic
+            // Placeholder: setSuggestedPeople([...]);
+        };
+
+        const fetchCommunities = async () => {
+            // Fetch communities logic
+            // Placeholder: setCommunities([...]);
+        };
+
+        fetchPosts();
+        fetchSuggestedPeople();
+        fetchCommunities();
+    }, []);
+
+    const addPost = (post) => {
+        setPosts([post, ...posts]);
+    };
+
     return (
         <div className="home">
             <div className="main-content">
                 <Navbar />
+                <CreatePost addPost={addPost} />
                 <div className="posts">
-                    {samplePosts.map((post, index) => (
+                    {posts.map((post, index) => (
                         <Posts key={index} {...post} />
                     ))}
                 </div>
@@ -62,4 +75,5 @@ function Home() {
         </div>
     );
 }
+
 export default Home;

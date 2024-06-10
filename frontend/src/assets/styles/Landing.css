@@ -1,0 +1,31 @@
+/* Styles for the landing page */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .landing-page h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .landing-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .landing-buttons .btn {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+  }
+  
+  .landing-buttons .btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,15 +1,75 @@
-/* Example Profile.css */
-.profile {
-    padding: 20px;
-    margin-left: 250px;
-  }
-  
-  @media (max-width: 768px) {
-    .profile {
-      margin-left: 0;
-      padding: 10px;
-    }
-  }
-  
-  /* Repeat similar structure for Notifications.css, Messages.css, SavedPosts.css, Search.css */
-  
+.profile-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.profile-field {
+  margin-bottom: 1rem;
+}
+
+.profile-field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.profile-field input,
+.profile-field span {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-edit,
+.btn-update,
+.btn-delete {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-update {
+  background-color: #008CBA;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #45a049;
+}
+
+.btn-update:hover {
+  background-color: #007bb5;
+}
+
+.btn-delete:hover {
+  background-color: #e03131;
+}

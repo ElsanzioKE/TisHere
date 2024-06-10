@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import '../assets/styles/Register.css'; // Import the new CSS file
+import { useNavigate } from 'react-router-dom';
+import '../assets/styles/Register.css';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const Register = () => {
     if (response.ok) {
       const data = await response.json();
       setMessage(`User ${data.name} created successfully!`);
+      setTimeout(() => navigate('/'), 2000); // Redirect to home page after a delay
     } else {
       const errorData = await response.json();
       setMessage(`Error: ${errorData.error}`);
